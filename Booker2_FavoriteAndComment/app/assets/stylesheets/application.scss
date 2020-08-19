@@ -39,3 +39,21 @@ body {
 #error_explanation {
   color: red;
 }
+
+.comment-list {
+	display: flex;
+}
+
+.comment {
+	margin-left: 10px;
+}
+
+.comment-destroy-button > a {
+	margin-left: 10px;
+	background-color: red;
+	color: white;
+	line-height: 20px;
+	text-align: center;
+	padding: 0 auto;
+	border-radius: 5px;
+}

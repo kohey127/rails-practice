@@ -13,10 +13,5 @@ class FavoritesController < ApplicationController
     favorite = current_user.favorites.find_by(book_id: book.id)
     favorite.destroy
     redirect_back(fallback_location: root_path)
-  end
-
-  def favorite_params
-    params.require(:favorite).permit(:user_id, :book_id)
-  end
-  
+  end  
 end
