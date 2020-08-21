@@ -54,3 +54,33 @@ body {
 .comment_table_form {
 	margin-left: 30px;
 }
+
+.follow_btn > a {
+	display: inline-block;
+	text-align: center;
+	background-color: limegreen;
+	width: 120px;
+	border-radius: 5px;
+	padding: 10px;
+	text-decoration: none;
+}
+
+.follow_btn > a:hover,
+.follow_out_btn > a:hover {
+	color: white;
+}
+
+.follow_btn,
+.follow_out_btn {
+	margin: 0 86px 10px
+}
+
+.follow_out_btn > a {
+	display: inline-block;
+	text-align: center;
+	background-color: skyblue;
+	width: 120px;
+	border-radius: 5px;
+	padding: 10px;
+	text-decoration: none;
+}
