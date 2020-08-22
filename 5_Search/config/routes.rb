@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :book_comments, only: [:create, :destroy]
   end
 
-  get 'search' =>
+  get 'search' => 'searches#search'
 
 
   # post 'follow/:id' => 'relationships#create', as: 'follow' # フォローする

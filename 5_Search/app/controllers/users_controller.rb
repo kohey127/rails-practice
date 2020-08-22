@@ -24,12 +24,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def search
-    method = params[:search_method]
-    word = params[:search_word]
-    @user = User.search(method, word)
-  end
-
   private
   def user_params
     params.require(:user).permit(:name, :introduction, :profile_image)

@@ -34,16 +34,17 @@ class User < ApplicationRecord
     following_user.include?(user)
   end
 
-  def self.search(method,word)
-		if method == "forword_match"
-			@user = User.where("text LIKE?", "#{word}%")
-		elsif method == "backword_match"
-			@user = User.where("text LIKE?", "%#{word}")
-		elsif method == "perfect_match"
-			@user = User.where("text LIKE?", "#{word}")
-		elsif method == "partical_match"
-			@user = User.where("text LIKE?", "%#{word}%")
-		end
+  def User.search(search, word)
+		if search == "forward_match"
+			User.where("name LIKE?", "#{word}%")
+		elsif search == "backward_match"
+			User.where("name LIKE?", "%#{word}")
+		elsif search == "perfect_match"
+			User.where("name LIKE?", "#{word}")
+		elsif search == "partial_match"
+      User.where("name LIKE?", "%#{word}%")
+    else
+      User.all
+    end
 	end
-
 end
