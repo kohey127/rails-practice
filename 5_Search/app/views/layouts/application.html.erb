@@ -44,13 +44,27 @@
       <% if user_signed_in? %>
         <div class="serch_form">
           <%= form_tag(search_path, method: :get) do %>
-            <%= text_field_tag (:word) %>
-            <%= select_tag 'range', options_for_select([['Book','1'], ['User','2']]) %>
-            <%= select_tag 'search', options_for_select([["前方一致","forward_match"], ["後方一致","backward_match"], ["完全一致","perfect_match"], ["部分一致","partial_match"]]) %>
+            <%= text_field_tag 'word' %>
+            <%= select_tag 'range', options_for_select({ "Book" => "1" , "User" => "2"}) %>
+            <%= select_tag 'search', options_for_select({ "完全一致" => "perfect", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partial" }) %>
             <%= submit_tag "検索" %>
           <% end %>
         </div>
       <% end %>
+      <%
+=begin%>
+ <% if user_signed_in? %>
+  <div class="search-form" style="margin-top: 70px; text-align: center;">
+    <%= form_tag(search_path, method: :get) do %>
+      <%= text_field_tag 'search[content]' %>
+      <%= select_tag 'search[model]', options_for_select({ "User" => "user", "Book" => "book" }) %>
+      <%= select_tag 'search[method]', options_for_select({ "完全一致" => "perfect", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partial" }) %>
+      <%= submit_tag '検索' %>
+    <% end %>
+  </div>
+<% end %> 
+<%
+=end%>
       <%= yield %>
     </div>
 
