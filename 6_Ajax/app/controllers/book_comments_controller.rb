@@ -8,7 +8,6 @@ class BookCommentsController < ApplicationController
     if @comment.save
       flash.now[:success] = "Comment was successfully created."
     end
-    render :index
   end
 
   def destroy
@@ -17,7 +16,6 @@ class BookCommentsController < ApplicationController
     if @comment.destroy
       flash.now[:notice] = "Comment was successfully deleted"
     end
-    render :index
   end
 
   private
